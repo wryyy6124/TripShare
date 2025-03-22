@@ -32,11 +32,17 @@ a:hover {
   color: var(--lp-color-pink);
 }
 
+/* ===============================
+
+SPレイアウト_START
+
+=============================== */
+
 /* -------------------------------
-SP_共通パーツ_START
+  サイト共通コンポーネント_START
 ------------------------------- */
 .common__logo {
-  font-size: clamp(14px, 2.4vw, 20px);
+  font-size: clamp(16px, 2.4vw, 20px);
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   display: flex;
@@ -75,26 +81,12 @@ SP_共通パーツ_START
   margin: 0 auto;
   width: 100%;
 }
-
-/* 暫定付与 */
-section {
-  padding: 20px 0;
-  min-height: 500px;
-  max-height: fit-content;
-}
-section:nth-of-type(odd) {
-  background-color: #dfdfdf;
-}
-
-.pages {
-  position: relative;
-}
 /* -------------------------------
-SP_共通パーツ_END
+  サイト共通コンポーネント_END
 ------------------------------- */
 
 /* -------------------------------
-SP_ヘッダー_START
+  ヘッダー_START
 ------------------------------- */
 .l-header {
   animation: headerSlideIn 0.4s ease-in-out forwards;
@@ -107,7 +99,7 @@ SP_ヘッダー_START
   width: 100%;
 }
 .l-header.is_scrolled {
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(1px);
 }
 
 @keyframes headerSlideIn {
@@ -125,7 +117,7 @@ SP_ヘッダー_START
   justify-content: space-between;
   position: relative;
   margin: 0 auto;
-  padding: 1em;
+  padding: 1em 1.5em;
   width: 100%;
   max-width: 1280px;
 }
@@ -153,6 +145,7 @@ body.is_active .header__logo a {
 .header__list {
   background-color: var(--lp-color-black);
   color: var(--lp-color-white);
+  font-size: clamp(16px, 2vw, 18px);
   position: fixed;
   top: 0;
   right: 0;
@@ -173,8 +166,8 @@ body.is_active .header__list {
   opacity: 1;
 }
 
-.header__list {
-  font-size: clamp(16px, 2vw, 14px);
+.header__list > li {
+  text-shadow: 0 0 15px var(--lp-color-white);
 }
 
 .header__list .common__button {
@@ -218,11 +211,40 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
 /* -------------------------------
-SP_ヘッダー_END
+  ヘッダー_END
 ------------------------------- */
 
 /* -------------------------------
-SP_ヒーローイメージ_START
+  メインコンテンツ共通_START
+------------------------------- */
+.pages {
+  position: relative;
+}
+
+/* 暫定付与 */
+.section {
+  min-height: 500px;
+  max-height: fit-content;
+}
+
+/* 暫定付与 */
+.section:nth-of-type(odd) {
+  background-color: #dfdfdf;
+}
+
+/* 暫定付与 */
+.section__inner {
+  margin: 0 auto;
+  padding: 1.5em 0;
+  width: calc(100% - 3em);
+  max-width: 1280px;
+}
+/* -------------------------------
+  メインコンテンツ共通_END
+------------------------------- */
+
+/* -------------------------------
+  ヒーローイメージ_START
 ------------------------------- */
 .hero {
   background-image: url("../images/hero.png");
@@ -244,11 +266,11 @@ SP_ヒーローイメージ_START
   flex-flow: column wrap;
 }
 /* -------------------------------
-SP_ヒーローイメージ_END
+  ヒーローイメージ_END
 ------------------------------- */
 
 /* -------------------------------
-SP_サービス_START
+  サービス_START
 ------------------------------- */
 /* 暫定付与 */
 .service__list {
@@ -267,11 +289,11 @@ SP_サービス_START
   border-radius: 8px;
 }
 /* -------------------------------
-SP_サービス_END
+  サービス_END
 ------------------------------- */
 
 /* -------------------------------
-SP_フッター_START
+  フッター_START
 ------------------------------- */
 .l-footer {
   background-color: var(--lp-color-black);
@@ -282,22 +304,37 @@ SP_フッター_START
   height: 500px;
 }
 /* -------------------------------
-SP_フッター_END
+  フッター_END
 ------------------------------- */
 
+/* ===============================
+
+SPレイアウト_END
+
+=============================== */
+
+/* ===============================
+
+PCレイアウト_START
+
+=============================== */
 @media screen and (min-width: 768px) {
   /* -------------------------------
-  SP_共通パーツ_START
+    共通パーツ_START
   ------------------------------- */
+  .section__inner {
+    max-width: 1280px;
+  }
+
   .common__button {
     padding: 1em 1.5em;
   }
   /* -------------------------------
-  SP_共通パーツ_END
+    共通パーツ_END
   ------------------------------- */
 
   /* -------------------------------
-  SP_ヘッダー_START
+    ヘッダー_START
   ------------------------------- */
   .header__hamburger {
     display: none;
@@ -321,27 +358,33 @@ SP_フッター_END
     padding: 0.5em 1.5em;
   }
   /* -------------------------------
-  SP_ヘッダー_END
+    ヘッダー_END
   ------------------------------- */
 
   /* -------------------------------
-  SP_ヒーローイメージ_START
+    ヒーローイメージ_START
   ------------------------------- */
   /* -------------------------------
-  SP_ヒーローイメージ_END
-  ------------------------------- */
-
-  /* -------------------------------
-  SP_サービス_START
-  ------------------------------- */
-  /* -------------------------------
-  SP_サービス_END
+    ヒーローイメージ_END
   ------------------------------- */
 
   /* -------------------------------
-  SP_フッター_START
+    サービス_START
   ------------------------------- */
   /* -------------------------------
-  SP_フッター_END
+    サービス_END
+  ------------------------------- */
+
+  /* -------------------------------
+    フッター_START
+  ------------------------------- */
+  /* -------------------------------
+    フッター_END
   ------------------------------- */
 }
+
+/* ===============================
+
+PCレイアウト_END
+
+=============================== */
