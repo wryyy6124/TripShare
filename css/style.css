@@ -1,1 +1,347 @@
-/* スタイル記載 */
+html {
+  --lp-color-black: #000;
+  --lp-color-white: #fff;
+  --lp-color-bg-white: #fcfcfc;
+  --lp-color-border-white: #ececec;
+  --lp-color-orange: #fe883d;
+  --lp-color-pink: #fb3596;
+  --lp-color-purple: #eb00fa;
+}
+
+body {
+  color: var(--lp-color-black);
+  font-family: "Noto Sans JP", sans-serif;
+  position: relative;
+}
+body.is_active {
+  overflow: hidden;
+}
+
+img {
+  user-select: none;
+  vertical-align: bottom;
+  width: 100%;
+  max-width: fit-content;
+  height: auto;
+}
+
+a {
+  transition: 0.4s color;
+}
+a:hover {
+  color: var(--lp-color-pink);
+}
+
+/* -------------------------------
+SP_共通パーツ_START
+------------------------------- */
+.common__logo {
+  font-size: clamp(14px, 2.4vw, 20px);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.common__button {
+  background-color: var(--lp-color-white);
+  border-radius: 1000px;
+  font-size: clamp(14px, 2.4vw, 20px);
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  padding: 1em 1.5em;
+  width: fit-content;
+}
+
+.common__gradientHeader {
+  background: linear-gradient(
+    45deg,
+    var(--lp-color-orange) 10%,
+    var(--lp-color-pink) 50%,
+    var(--lp-color-purple) 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  /* 暫定付与 */
+  font-size: 4vw;
+
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 暫定付与 */
+section {
+  padding: 20px 0;
+  min-height: 500px;
+  max-height: fit-content;
+}
+section:nth-of-type(odd) {
+  background-color: #dfdfdf;
+}
+
+.pages {
+  position: relative;
+}
+/* -------------------------------
+SP_共通パーツ_END
+------------------------------- */
+
+/* -------------------------------
+SP_ヘッダー_START
+------------------------------- */
+.l-header {
+  animation: headerSlideIn 0.4s ease-in-out forwards;
+  background-color: transparent;
+  transition: background-color 0.4s ease-in-out;
+  position: fixed;
+  top: -100px;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+}
+.l-header.is_scrolled {
+  backdrop-filter: blur(2px);
+}
+
+@keyframes headerSlideIn {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 auto;
+  padding: 1em;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.header__logo {
+  text-shadow: 0 0 5px var(--lp-color-white);
+  transition: 0.4s color;
+  position: relative;
+  z-index: 12;
+  width: fit-content;
+}
+
+.header__logo a {
+  color: var(--lp-color-black);
+  display: flex;
+  font-size: clamp(14px, 2vw, 20px);
+  align-items: center;
+  justify-self: start;
+  gap: 0.5em;
+}
+body.is_active .header__logo a {
+  color: var(--lp-color-white);
+}
+
+.header__list {
+  background-color: var(--lp-color-black);
+  color: var(--lp-color-white);
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  gap: 4em;
+  transition: 0.4s transform;
+  transform: translateX(100vw);
+  opacity: 0;
+  z-index: 11;
+  width: 100vw;
+  height: 100vh;
+}
+body.is_active .header__list {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.header__list {
+  font-size: clamp(16px, 2vw, 14px);
+}
+
+.header__list .common__button {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: var(--lp-color-black);
+  font-size: clamp(16px, 2vw, 14px);
+  padding: 1.5em;
+}
+.header__list .common__button:hover {
+  color: var(--lp-color-pink);
+}
+
+.header__hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+  z-index: 12;
+  width: 20px;
+}
+
+.header__hamburger > span {
+  background-color: var(--lp-color-black);
+  border-radius: 6px;
+  box-shadow: 0 0 1px var(--lp-color-white);
+  transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
+  width: 100%;
+  height: 3px;
+}
+body.is_active .header__hamburger > span {
+  background-color: var(--lp-color-white);
+}
+body.is_active .header__hamburger > span:nth-of-type(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+body.is_active .header__hamburger > span:nth-of-type(2) {
+  opacity: 0;
+}
+body.is_active .header__hamburger > span:nth-of-type(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+/* -------------------------------
+SP_ヘッダー_END
+------------------------------- */
+
+/* -------------------------------
+SP_ヒーローイメージ_START
+------------------------------- */
+.hero {
+  background-image: url("../images/hero.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+
+  /* 暫定付与 */
+  height: 80vh;
+}
+
+/* 暫定付与 */
+.hero__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+/* -------------------------------
+SP_ヒーローイメージ_END
+------------------------------- */
+
+/* -------------------------------
+SP_サービス_START
+------------------------------- */
+/* 暫定付与 */
+.service__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 0 auto;
+  width: 50%;
+}
+.service__list > li {
+  width: 44%;
+}
+.service__list img {
+  border-radius: 8px;
+}
+/* -------------------------------
+SP_サービス_END
+------------------------------- */
+
+/* -------------------------------
+SP_フッター_START
+------------------------------- */
+.l-footer {
+  background-color: var(--lp-color-black);
+  color: var(--lp-color-white);
+  width: 100%;
+
+  /* 暫定付与 */
+  height: 500px;
+}
+/* -------------------------------
+SP_フッター_END
+------------------------------- */
+
+@media screen and (min-width: 768px) {
+  /* -------------------------------
+  SP_共通パーツ_START
+  ------------------------------- */
+  .common__button {
+    padding: 1em 1.5em;
+  }
+  /* -------------------------------
+  SP_共通パーツ_END
+  ------------------------------- */
+
+  /* -------------------------------
+  SP_ヘッダー_START
+  ------------------------------- */
+  .header__hamburger {
+    display: none;
+  }
+
+  .header__list {
+    background: none;
+    color: var(--lp-color-black);
+    flex-direction: row;
+    gap: 1.5em;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+  .header__list .common__button {
+    color: var(--lp-color-black);
+    padding: 0.5em 1.5em;
+  }
+  /* -------------------------------
+  SP_ヘッダー_END
+  ------------------------------- */
+
+  /* -------------------------------
+  SP_ヒーローイメージ_START
+  ------------------------------- */
+  /* -------------------------------
+  SP_ヒーローイメージ_END
+  ------------------------------- */
+
+  /* -------------------------------
+  SP_サービス_START
+  ------------------------------- */
+  /* -------------------------------
+  SP_サービス_END
+  ------------------------------- */
+
+  /* -------------------------------
+  SP_フッター_START
+  ------------------------------- */
+  /* -------------------------------
+  SP_フッター_END
+  ------------------------------- */
+}
