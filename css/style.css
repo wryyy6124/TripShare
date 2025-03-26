@@ -1,4 +1,7 @@
-html {
+/* -------------------------------
+  ページ共通スタイル_START
+------------------------------- */
+:root {
   --lp-color-black: #000;
   --lp-color-white: #fff;
   --lp-color-bg-white: #fcfcfc;
@@ -11,7 +14,9 @@ html {
 body {
   color: var(--lp-color-black);
   font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.5;
   position: relative;
+  overflow: visible;
 }
 body.is_active {
   overflow: hidden;
@@ -31,6 +36,9 @@ a {
 a:hover {
   color: var(--lp-color-pink);
 }
+/* -------------------------------
+  ページ共通スタイル_END
+------------------------------- */
 
 /* ===============================
 
@@ -64,12 +72,12 @@ SPレイアウト_START
 .common__catchBlock {
   margin-bottom: 8%;
 }
-.common__catchBlock > *:not(:last-child) {
-  margin-bottom: 4%;
-}
 
 .common__gradient__anchor {
   text-align: center;
+}
+.common__gradient__anchor > *:not(:last-child) {
+  margin-bottom: 4%;
 }
 
 .common__gradientHeader {
@@ -241,7 +249,6 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
   background-color: #dfdfdf;
 }
 
-/* 暫定付与 */
 .section__inner {
   margin: 0 auto;
   width: calc(100% - 3em);
@@ -292,14 +299,13 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 
 .hero__header {
   font-size: clamp(30px, 6vw, 48px);
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 5%;
 }
 
 .hero__text {
   font-size: clamp(14px, 4vw, 24px);
 }
-
 /* -------------------------------
   ヒーローイメージ_END
 ------------------------------- */
@@ -309,24 +315,53 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 ------------------------------- */
 .service {
   background-color: var(--lp-color-black);
-  color: var(--lp-color-white);
 }
 
-/* 暫定付与 */
+.service__inner {
+  padding: 10% 0 12% 0;
+}
+
+.service__catchCopy {
+  color: var(--lp-color-white);
+  margin-bottom: 10%;
+}
+
+.service__header {
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 6%;
+}
+
+.service__text {
+  font-size: clamp(14px, 4vw, 24px);
+  font-weight: 400;
+  text-align: left;
+  line-height: 1.6;
+}
+
 .service__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 1.5em;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.service__list > li {
+  border-radius: 8px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 1em;
-  margin: 0 auto;
-  width: 50%;
+  aspect-ratio: 1 / 1;
 }
-.service__list > li {
-  width: 44%;
-}
+
 .service__list img {
-  border-radius: 8px;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
 }
 /* -------------------------------
   サービス_END
@@ -359,19 +394,26 @@ SPレイアウト_END
 
 /* ===============================
 
-PCレイアウト_START
+PC・タブレットレイアウト_START
 
 =============================== */
 @media screen and (min-width: 768px) {
   /* -------------------------------
     サイト共通コンポーネント_START
   ------------------------------- */
-  .section__inner {
-    padding: 50px 100px;
+  .common__button {
+    padding: 16px 32px;
   }
 
-  .common__button {
-    padding: 1em 1.5em;
+  .common__catchBlock {
+    margin-bottom: 50px;
+  }
+
+  .common__gradientHeader {
+    font-size: 36px;
+  }
+  .common__gradientHeader > *:not(:last-child) {
+    margin-bottom: 10px;
   }
 
   .common__catchBlock {
@@ -426,11 +468,11 @@ PCレイアウト_START
   }
 
   .hero__header {
-    margin-bottom: 25px;
+    margin-bottom: 32px;
   }
 
   .hero__catchCopy {
-    margin-bottom: 75px;
+    margin-bottom: 64px;
   }
   /* -------------------------------
     ヒーローイメージ_END
@@ -439,6 +481,21 @@ PCレイアウト_START
   /* -------------------------------
     サービス_START
   ------------------------------- */
+  .service__inner {
+    padding: 64px 0;
+  }
+
+  .service__catchCopy,
+  .service__header {
+    margin-bottom: 64px;
+  }
+
+  .service__list {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2e1.5;
+    max-width: 896px;
+  }
   /* -------------------------------
     サービス_END
   ------------------------------- */
@@ -446,6 +503,7 @@ PCレイアウト_START
   /* -------------------------------
     フッター_START
   ------------------------------- */
+  /* 暫定付与 */
   .footer__inner {
     padding: 50px 100px;
   }
@@ -456,6 +514,6 @@ PCレイアウト_START
 
 /* ===============================
 
-PCレイアウト_END
+PC・タブレットレイアウト_END
 
 =============================== */
