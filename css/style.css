@@ -416,14 +416,6 @@ PC・タブレットレイアウト_START
     margin-bottom: 10px;
   }
 
-  .common__catchBlock {
-    margin-bottom: 50px;
-  }
-
-  .common__catchBlock > *:not(:last-child) {
-    margin-bottom: 10px;
-  }
-
   .common__gradientHeader {
     font-size: 36px;
   }
@@ -493,7 +485,7 @@ PC・タブレットレイアウト_START
   .service__list {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, auto);
-    gap: 2e1.5;
+    gap: 2em;
     max-width: 896px;
   }
   /* -------------------------------
