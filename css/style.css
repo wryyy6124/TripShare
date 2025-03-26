@@ -415,6 +415,18 @@ PC・タブレットレイアウト_START
   .common__gradientHeader > *:not(:last-child) {
     margin-bottom: 10px;
   }
+
+  .common__catchBlock {
+    margin-bottom: 50px;
+  }
+
+  .common__catchBlock > *:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .common__gradientHeader {
+    font-size: 36px;
+  }
   /* -------------------------------
     サイト共通コンポーネント_END
   ------------------------------- */
