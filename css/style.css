@@ -386,13 +386,13 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 }
 
 .features__figcaption__h3 {
-  color: var(--lp-color-dark-gray);
+  color: rgb(var(--lp-color-dark-gray));
   font-size: clamp(24px, 8vw, 32px);
   font-family: "Montserrat", sans-serif;
   position: relative;
 }
 .features__figcaption__h3::after {
-  background-color: var(--lp-color-dark-gray);
+  background-color: rgb(var(--lp-color-dark-gray));
   content: "";
   display: inline-block;
   position: absolute;
@@ -403,7 +403,7 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 }
 
 .features__figcaption__h4 {
-  color: var(--lp-color-black);
+  color: rgb(var(--lp-color-black));
   font-size: clamp(18px, 6vw, 24px);
   font-weight: 700;
 }
@@ -414,7 +414,7 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 }
 
 .features__figcaption__text {
-  color: var(--lp-color-dark-gray);
+  color: rgb(var(--lp-color-dark-gray));
   font-size: clamp(14px, 5vw, 16px);
 }
 /* -------------------------------
