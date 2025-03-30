@@ -693,6 +693,12 @@ PC・タブレットレイアウト_START
     padding: 64px 0;
   }
 
+  @media screen and (max-width: 1080px) {
+    .voices__inner {
+      border-radius: 0;
+    }
+  }
+
   .voices__catchCopy {
     margin-bottom: 64px;
   }
