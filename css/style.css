@@ -2,17 +2,18 @@
   ページ共通スタイル_START
 ------------------------------- */
 :root {
-  --lp-color-black: #000;
-  --lp-color-white: #fff;
-  --lp-color-bg-white: #fcfcfc;
-  --lp-color-border-white: #ececec;
-  --lp-color-orange: #fe883d;
-  --lp-color-pink: #fb3596;
-  --lp-color-purple: #eb00fa;
+  --lp-color-black: 28, 28, 28;
+  --lp-color-dark-gray: 93, 93, 93;
+  --lp-color-white: 255, 255, 255;
+  --lp-color-bg-white: 245, 245, 245;
+  --lp-color-border-white: 237, 237, 237;
+  --lp-color-orange: 254, 136, 62;
+  --lp-color-pink: 251, 55, 150;
+  --lp-color-purple: 233, 0, 250;
 }
 
 body {
-  color: var(--lp-color-black);
+  color: rgb(var(--lp-color-black));
   font-family: "Noto Sans JP", sans-serif;
   line-height: 1.5;
   position: relative;
@@ -26,7 +27,6 @@ img {
   user-select: none;
   vertical-align: bottom;
   width: 100%;
-  max-width: fit-content;
   height: auto;
 }
 
@@ -34,7 +34,7 @@ a {
   transition: 0.4s color;
 }
 a:hover {
-  color: var(--lp-color-pink);
+  color: rgb(var(--lp-color-pink));
 }
 /* -------------------------------
   ページ共通スタイル_END
@@ -59,9 +59,9 @@ SPレイアウト_START
 }
 
 .common__button {
-  background-color: var(--lp-color-white);
+  background-color: rgb(var(--lp-color-white));
   border-radius: 1000px;
-  font-size: clamp(14px, 2.4vw, 20px);
+  font-size: clamp(16px, 2.4vw, 20px);
   font-weight: 700;
   text-align: center;
   display: block;
@@ -73,19 +73,23 @@ SPレイアウト_START
   margin-bottom: 8%;
 }
 
+.common__catchBlock__text {
+  font-size: clamp(16px, 4vw, 18px);
+}
+
 .common__gradient__anchor {
   text-align: center;
 }
 .common__gradient__anchor > *:not(:last-child) {
-  margin-bottom: 4%;
+  margin-bottom: 1%;
 }
 
-.common__gradientHeader {
+.common__gradient__header {
   background: linear-gradient(
     45deg,
-    var(--lp-color-orange) -4.51%,
-    var(--lp-color-pink) 46.93%,
-    var(--lp-color-purple) 98.38%
+    rgb(var(--lp-color-orange)) -4.51%,
+    rgb(var(--lp-color-pink)) 46.93%,
+    rgb(var(--lp-color-purple)) 98.38%
   );
   background-size: 200% 200%;
   -webkit-background-clip: text;
@@ -117,6 +121,7 @@ SPレイアウト_START
 }
 .l-header.is_scrolled {
   backdrop-filter: blur(1px);
+  background-color: rgba(var(--lp-color-white), 0.6);
 }
 
 @keyframes headerSlideIn {
@@ -134,13 +139,13 @@ SPレイアウト_START
   justify-content: space-between;
   position: relative;
   margin: 0 auto;
-  padding: 1em 1.5em;
+  padding: 1em;
   width: 100%;
   max-width: 1280px;
 }
 
 .header__logo {
-  text-shadow: 0 0 5px var(--lp-color-white);
+  text-shadow: 0 0 5px rgb(var(--lp-color-white));
   transition: 0.4s color;
   position: relative;
   z-index: 12;
@@ -148,20 +153,20 @@ SPレイアウト_START
 }
 
 .header__logo a {
-  color: var(--lp-color-black);
+  color: rgb(var(--lp-color-black));
   display: flex;
-  font-size: clamp(14px, 2vw, 20px);
+  font-size: clamp(16px, 2vw, 20px);
   align-items: center;
   justify-self: start;
   gap: 0.5em;
 }
 body.is_active .header__logo a {
-  color: var(--lp-color-white);
+  color: rgb(var(--lp-color-white));
 }
 
 .header__list {
-  background-color: var(--lp-color-black);
-  color: var(--lp-color-white);
+  background-color: rgb(var(--lp-color-black));
+  color: rgb(var(--lp-color-white));
   font-size: clamp(16px, 2vw, 18px);
   position: fixed;
   top: 0;
@@ -184,17 +189,17 @@ body.is_active .header__list {
 }
 
 .header__list > li {
-  text-shadow: 0 0 4px var(--lp-color-white);
+  text-shadow: 0 0 4px rgb(var(--lp-color-white));
 }
 
 .header__list .common__button {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: var(--lp-color-black);
+  box-shadow: 0 0 10px rgba(var(--lp-color-black), 0.1);
+  color: rgb(var(--lp-color-black));
   font-size: clamp(14px, 2.4vw, 16px);
   padding: 1.5em;
 }
 .header__list .common__button:hover {
-  color: var(--lp-color-pink);
+  color: rgb(var(--lp-color-pink));
 }
 
 .header__hamburger {
@@ -208,15 +213,15 @@ body.is_active .header__list {
 }
 
 .header__hamburger > span {
-  background-color: var(--lp-color-black);
+  background-color: rgb(var(--lp-color-black));
   border-radius: 6px;
-  box-shadow: 0 0 1px var(--lp-color-white);
+  box-shadow: 0 0 1px rgb(var(--lp-color-white));
   transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
   width: 100%;
   height: 3px;
 }
 body.is_active .header__hamburger > span {
-  background-color: var(--lp-color-white);
+  background-color: rgb(var(--lp-color-white));
 }
 body.is_active .header__hamburger > span:nth-of-type(1) {
   transform: translateY(6px) rotate(45deg);
@@ -236,17 +241,6 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 ------------------------------- */
 .pages {
   position: relative;
-}
-
-/* 暫定付与 */
-.section {
-  min-height: 500px;
-  max-height: fit-content;
-}
-
-/* 暫定付与 */
-.section:nth-of-type(odd) {
-  background-color: #dfdfdf;
 }
 
 .section__inner {
@@ -288,13 +282,13 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 }
 
 .hero__catchCopy {
-  color: var(--lp-color-white);
+  color: rgb(var(--lp-color-white));
   text-align: center;
   margin-bottom: 15%;
 }
 
 .hero__catchCopy > * {
-  text-shadow: 0 0 25px var(--lp-color-black);
+  text-shadow: 0 0 24px rgb(var(--lp-color-black));
 }
 
 .hero__header {
@@ -304,7 +298,7 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 }
 
 .hero__text {
-  font-size: clamp(14px, 4vw, 24px);
+  font-size: clamp(16px, 4vw, 24px);
 }
 /* -------------------------------
   ヒーローイメージ_END
@@ -314,7 +308,7 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
   サービス_START
 ------------------------------- */
 .service {
-  background-color: var(--lp-color-black);
+  background-color: rgb(var(--lp-color-black));
 }
 
 .service__inner {
@@ -322,19 +316,19 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 }
 
 .service__catchCopy {
-  color: var(--lp-color-white);
+  color: rgb(var(--lp-color-white));
   margin-bottom: 10%;
 }
 
 .service__header {
-  font-size: clamp(24px, 5vw, 36px);
+  font-size: clamp(20px, 5vw, 36px);
   font-weight: 700;
   text-align: center;
   margin-bottom: 6%;
 }
 
 .service__text {
-  font-size: clamp(14px, 4vw, 24px);
+  font-size: clamp(16px, 4vw, 24px);
   font-weight: 400;
   text-align: left;
   line-height: 1.6;
@@ -368,11 +362,75 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 ------------------------------- */
 
 /* -------------------------------
+  機能概要_START
+------------------------------- */
+.features__inner {
+  padding: 10% 0 12% 0;
+}
+
+.features__list > li:not(:last-of-type) {
+  margin-bottom: 12%;
+}
+
+.features__figure {
+  display: flex;
+  flex-flow: column-reverse wrap;
+}
+
+.features__photo {
+  display: block;
+}
+
+.features__figcaption {
+  margin-bottom: 6%;
+}
+
+.features__figcaption__h3 {
+  color: rgb(var(--lp-color-dark-gray));
+  font-size: clamp(24px, 8vw, 32px);
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+.features__figcaption__h3::after {
+  background-color: rgb(var(--lp-color-dark-gray));
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: -0.05em;
+  width: 1.4em;
+  height: 2px;
+}
+
+.features__figcaption__h4 {
+  color: rgb(var(--lp-color-black));
+  font-size: clamp(18px, 6vw, 24px);
+  font-weight: 700;
+}
+
+.features__figcaption__h3,
+.features__figcaption__h4 {
+  margin-bottom: 0.5em;
+}
+
+.features__figcaption__text {
+  color: rgb(var(--lp-color-dark-gray));
+  font-size: clamp(14px, 5vw, 16px);
+}
+/* -------------------------------
+  機能概要_END
+------------------------------- */
+
+.voices {
+  background-color: rgb(var(--lp-color-bg-white));
+}
+
+/* -------------------------------
   フッター_START
 ------------------------------- */
 .l-footer {
-  background-color: var(--lp-color-black);
-  color: var(--lp-color-white);
+  background-color: rgb(var(--lp-color-black));
+  color: rgb(var(--lp-color-white));
   width: 100%;
   height: auto;
 }
@@ -399,6 +457,16 @@ PC・タブレットレイアウト_START
 =============================== */
 @media screen and (min-width: 768px) {
   /* -------------------------------
+  ページ共通スタイル_START
+  ------------------------------- */
+  img {
+    max-width: fit-content;
+  }
+  /* -------------------------------
+    ページ共通スタイル_END
+  ------------------------------- */
+
+  /* -------------------------------
     サイト共通コンポーネント_START
   ------------------------------- */
   .common__button {
@@ -406,11 +474,11 @@ PC・タブレットレイアウト_START
   }
 
   .common__catchBlock {
-    margin-bottom: 50px;
+    margin-bottom: 80px;
   }
 
-  .common__gradientHeader > *:not(:last-child) {
-    margin-bottom: 10px;
+  .common__gradient__header > *:not(:last-child) {
+    margin-bottom: 8px;
   }
   /* -------------------------------
     サイト共通コンポーネント_END
@@ -425,7 +493,7 @@ PC・タブレットレイアウト_START
 
   .header__list {
     background: none;
-    color: var(--lp-color-black);
+    color: rgb(var(--lp-color-black));
     flex-direction: row;
     gap: 1.5em;
     transform: none;
@@ -437,7 +505,6 @@ PC・タブレットレイアウト_START
   }
 
   .header__list .common__button {
-    color: var(--lp-color-black);
     padding: 0.5em 1.5em;
   }
   /* -------------------------------
@@ -483,6 +550,52 @@ PC・タブレットレイアウト_START
   }
   /* -------------------------------
     サービス_END
+  ------------------------------- */
+
+  /* -------------------------------
+    機能概要_START
+  ------------------------------- */
+  .features__inner {
+    padding: 64px 0;
+  }
+
+  .features__list > li:not(:last-of-type) {
+    margin-bottom: 80px;
+  }
+
+  .features__figure {
+    display: flex;
+    flex: 1;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 32px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1080px;
+  }
+  .features__list > li:not(:nth-of-type(2n)) .features__figure {
+    flex-direction: row-reverse;
+  }
+
+  .features__photo {
+    flex-shrink: 0;
+  }
+
+  .features__figcaption {
+    flex: 1;
+    margin-bottom: 0;
+    min-width: 0;
+  }
+
+  .features__figcaption__h3 {
+    margin-bottom: 32px;
+  }
+
+  .features__figcaption__h4 {
+    margin-bottom: 16px;
+  }
+  /* -------------------------------
+    機能概要_END
   ------------------------------- */
 
   /* -------------------------------
