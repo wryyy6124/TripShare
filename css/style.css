@@ -501,6 +501,61 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 /* -------------------------------
   コールトゥアクション_START
 ------------------------------- */
+.share {
+  background-image: url("../images/call_action_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  margin-top: 10%;
+}
+
+.share::after {
+  background-color: rgb(var(--lp-color-black));
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+}
+
+.share__inner {
+  position: relative;
+  z-index: 3;
+  opacity: 1;
+  overflow: visible;
+  margin: 0 auto;
+  padding: 8% 0;
+  width: calc(100% - 3em);
+  max-width: 1080px;
+}
+
+.share__catchCopy {
+  color: rgb(var(--lp-color-white));
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+.share__header {
+  font-size: clamp(16px, 5vw, 36px);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8%;
+}
+
+.share__text {
+  font-size: clamp(14px, 4vw, 20px);
+  font-weight: 400;
+}
+
+.share__button > .common__button {
+  margin: 0 auto;
+  width: 100%;
+}
 /* -------------------------------
   コールトゥアクション_END
 ------------------------------- */
@@ -730,6 +785,22 @@ PC・タブレットレイアウト_START
   /* -------------------------------
     コールトゥアクション_START
   ------------------------------- */
+  .share {
+    margin-top: 64px;
+  }
+
+  .share__inner {
+    padding: 64px 0;
+  }
+
+  .share__catchCopy,
+  .share__header {
+    margin-bottom: 37px;
+  }
+
+  .share__button > .common__button {
+    width: fit-content;
+  }
   /* -------------------------------
     コールトゥアクション_END
   ------------------------------- */
