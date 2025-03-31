@@ -313,6 +313,7 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 
 .service__inner {
   padding: 10% 0 12% 0;
+  width: calc(100% - 1.5em);
 }
 
 .service__catchCopy {
@@ -321,7 +322,7 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 }
 
 .service__header {
-  font-size: clamp(20px, 5vw, 36px);
+  font-size: clamp(16px, 5vw, 36px);
   font-weight: 700;
   text-align: center;
   margin-bottom: 6%;
@@ -338,7 +339,7 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, auto);
-  gap: 1.5em;
+  gap: 0.75em;
   margin: 0 auto;
   width: 100%;
 }
@@ -421,9 +422,95 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
   機能概要_END
 ------------------------------- */
 
-.voices {
+/* -------------------------------
+  ユーザーボイス_START
+------------------------------- */
+.voices__inner {
   background-color: rgb(var(--lp-color-bg-white));
+  overflow: visible;
+  padding: 6% 0;
+  max-width: 1080px;
+  width: 100%;
 }
+
+.voices__catchCopy {
+  margin: 0 auto 8% auto;
+  padding: 0 1.5em;
+  width: 100%;
+}
+
+.voices__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: row;
+  column-gap: 32px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 1.5em 16px 1.5em;
+  width: 100%;
+}
+
+.voices__list > li {
+  border-radius: 16px 16px 0 0;
+  flex: 0 0 auto;
+  overflow: hidden;
+  scroll-snap-align: center;
+  width: 69.1%;
+}
+
+.voices__figure {
+  background-color: rgba(var(--lp-color-white), 1);
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.voices__image {
+  aspect-ratio: 5 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+}
+
+.voices__image__photo {
+  object-fit: cover;
+  object-position: center;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.voices__figcaption {
+  font-size: 4vw;
+  padding: 8vw;
+}
+
+.voices__figcaption__h3 {
+  color: rgb(var(--lp-color-dark-gray));
+  margin-bottom: 4vw;
+}
+/* -------------------------------
+  ユーザーボイス_END
+------------------------------- */
+
+/* -------------------------------
+  コールトゥアクション_START
+------------------------------- */
+/* -------------------------------
+  コールトゥアクション_END
+------------------------------- */
+
+/* -------------------------------
+  お問い合わせフォーム_START
+------------------------------- */
+/* -------------------------------
+  お問い合わせフォーム_END
+------------------------------- */
 
 /* -------------------------------
   フッター_START
@@ -596,6 +683,62 @@ PC・タブレットレイアウト_START
   }
   /* -------------------------------
     機能概要_END
+  ------------------------------- */
+
+  /* -------------------------------
+    ユーザーボイス_START
+  ------------------------------- */
+  .voices__inner {
+    border-radius: 16px;
+    padding: 64px 0;
+  }
+
+  @media screen and (max-width: 1080px) {
+    .voices__inner {
+      border-radius: 0;
+    }
+  }
+
+  .voices__catchCopy {
+    margin-bottom: 64px;
+  }
+
+  .voices__list {
+    padding: 0 32px 32px 32px;
+  }
+
+  .voices__list > li {
+    width: 372px;
+  }
+
+  .voices__image {
+    height: 250px;
+  }
+
+  .voices__figcaption {
+    font-size: 16px;
+    padding: 32px;
+  }
+
+  .voices__figcaption__h3 {
+    margin-bottom: 16px;
+  }
+  /* -------------------------------
+    ユーザーボイス_END
+  ------------------------------- */
+
+  /* -------------------------------
+    コールトゥアクション_START
+  ------------------------------- */
+  /* -------------------------------
+    コールトゥアクション_END
+  ------------------------------- */
+
+  /* -------------------------------
+    お問い合わせフォーム_START
+  ------------------------------- */
+  /* -------------------------------
+    お問い合わせフォーム_END
   ------------------------------- */
 
   /* -------------------------------
