@@ -340,48 +340,67 @@
             <form action="#" class="contact__form">
               <ul class="contact__form__list">
                 <li>
-                  <h3 class="contact__form__h3">種別*</h3>
+                  <h3 class="contact__form__h3 is_required">種別</h3>
                   <ul class="contact__form__radio">
                     <li>
                       <input
                         type="radio"
+                        class="contact__form__radio"
                         id="Application"
                         name="contact"
                         value="アプリの使い方について"
+                        checked
                       />
-                      <label for="Application">アプリの使い方について</label>
+                      <label for="Application" class="contact__form__label"
+                        >アプリの使い方について</label
+                      >
                     </li>
                     <li>
                       <input
                         type="radio"
                         id="Planing"
+                        class="contact__form__radio"
                         name="contact"
                         value="プランについて"
                       />
-                      <label for="Planing">プランについて</label>
+                      <label for="Planing" class="contact__form__label"
+                        >プランについて</label
+                      >
                     </li>
                     <li>
                       <input
                         type="radio"
+                        class="contact__form__radio"
                         id="Others"
                         name="contact"
                         value="その他"
                       />
-                      <label for="Others">その他</label>
+                      <label for="Others" class="contact__form__label"
+                        >その他</label
+                      >
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <h3 class="contact__form__h3">
-                    <label for="Email">メールアドレス*</label>
+                  <h3 class="contact__form__h3 is_required">
+                    <label for="Email">メールアドレス</label>
                   </h3>
-                  <input type="email" name="contact" id="Email" />
+                  <input
+                    type="email"
+                    class="contact__form__email"
+                    id="Email"
+                    name="contact"
+                  />
                 </li>
                 <li>
                   <h3 class="contact__form__h3">
                     <label for="Inquiry">お問い合わせ内容</label>
                   </h3>
-                  <textarea name="contact" id="Inquiry"></textarea>
+                  <textarea
+                    name="contact"
+                    class="contact__form__textarea"
+                    id="Inquiry"
+                  ></textarea>
                 </li>
               </ul>
               <div class="contact__form__submit common__button">
