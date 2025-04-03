@@ -99,6 +99,7 @@
                   class="service__photo"
                   src="./images/service_1.jpg"
                   alt="写真1"
+                  loading="lazy"
                 />
               </li>
               <li>
@@ -106,6 +107,7 @@
                   class="service__photo"
                   src="./images/service_2.jpg"
                   alt="写真2"
+                  loading="lazy"
                 />
               </li>
               <li>
@@ -113,6 +115,7 @@
                   class="service__photo"
                   src="./images/service_3.jpg"
                   alt="写真3"
+                  loading="lazy"
                 />
               </li>
               <li>
@@ -120,6 +123,7 @@
                   class="service__photo"
                   src="./images/service_4.jpg"
                   alt="写真4"
+                  loading="lazy"
                 />
               </li>
               <li>
@@ -127,6 +131,7 @@
                   class="service__photo"
                   src="./images/service_5.jpg"
                   alt="写真5"
+                  loading="lazy"
                 />
               </li>
               <li>
@@ -134,6 +139,7 @@
                   class="service__photo"
                   src="./images/service_6.jpg"
                   alt="写真6"
+                  loading="lazy"
                 />
               </li>
               <li>
@@ -141,6 +147,7 @@
                   class="service__photo"
                   src="./images/service_7.jpg"
                   alt="写真7"
+                  loading="lazy"
                 />
               </li>
               <li>
@@ -148,6 +155,7 @@
                   class="service__photo"
                   src="./images/service_8.jpg"
                   alt="写真8"
+                  loading="lazy"
                 />
               </li>
             </ol>
@@ -177,6 +185,7 @@
                     class="features__photo"
                     src="./images/feature_1.png"
                     alt="高品質な写真編集機能"
+                    loading="lazy"
                   />
                   <figcaption class="features__figcaption">
                     <h3 class="features__figcaption__h3">Feature 1</h3>
@@ -197,6 +206,7 @@
                     class="features__photo"
                     src="./images/feature_2.png"
                     alt="リアルタイムの位置情報シェア"
+                    loading="lazy"
                   />
                   <figcaption class="features__figcaption">
                     <h3 class="features__figcaption__h3">Feature 2</h3>
@@ -217,6 +227,7 @@
                     class="features__photo"
                     src="./images/feature_3.png"
                     alt="コメントといいね！"
+                    loading="lazy"
                   />
                   <figcaption class="features__figcaption">
                     <h3 class="features__figcaption__h3">Feature 3</h3>
@@ -257,6 +268,7 @@
                       class="voices__image__photo"
                       src="./images/model_1.png"
                       alt="32歳 会社員 Sさん"
+                      loading="lazy"
                     />
                   </div>
                   <figcaption class="voices__figcaption">
@@ -274,6 +286,7 @@
                       class="voices__image__photo"
                       src="./images/model_2.png"
                       alt="28歳 自営業 Tさん"
+                      loading="lazy"
                     />
                   </div>
                   <figcaption class="voices__figcaption">
@@ -291,6 +304,7 @@
                       class="voices__image__photo"
                       src="./images/model_3.png"
                       alt="22歳 学生 Sさん"
+                      loading="lazy"
                     />
                   </div>
                   <figcaption class="voices__figcaption">
@@ -340,51 +354,70 @@
             <form action="#" class="contact__form">
               <ul class="contact__form__list">
                 <li>
-                  <h3 class="contact__form__h3">種別*</h3>
+                  <h3 class="contact__form__h3 is_required">種別</h3>
                   <ul class="contact__form__radio">
                     <li>
                       <input
                         type="radio"
+                        class="contact__form__radio"
                         id="Application"
                         name="contact"
                         value="アプリの使い方について"
+                        checked
                       />
-                      <label for="Application">アプリの使い方について</label>
+                      <label for="Application" class="contact__form__label"
+                        >アプリの使い方について</label
+                      >
                     </li>
                     <li>
                       <input
                         type="radio"
                         id="Planing"
+                        class="contact__form__radio"
                         name="contact"
                         value="プランについて"
                       />
-                      <label for="Planing">プランについて</label>
+                      <label for="Planing" class="contact__form__label"
+                        >プランについて</label
+                      >
                     </li>
                     <li>
                       <input
                         type="radio"
+                        class="contact__form__radio"
                         id="Others"
                         name="contact"
                         value="その他"
                       />
-                      <label for="Others">その他</label>
+                      <label for="Others" class="contact__form__label"
+                        >その他</label
+                      >
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <h3 class="contact__form__h3">
-                    <label for="Email">メールアドレス*</label>
+                  <h3 class="contact__form__h3 is_required">
+                    <label for="Email">メールアドレス</label>
                   </h3>
-                  <input type="email" name="contact" id="Email" />
+                  <input
+                    type="email"
+                    class="contact__form__email"
+                    id="Email"
+                    name="contact"
+                  />
                 </li>
                 <li>
                   <h3 class="contact__form__h3">
                     <label for="Inquiry">お問い合わせ内容</label>
                   </h3>
-                  <textarea name="contact" id="Inquiry"></textarea>
+                  <textarea
+                    name="contact"
+                    class="contact__form__textarea"
+                    id="Inquiry"
+                  ></textarea>
                 </li>
               </ul>
-              <div class="contact__form__submit common__button">
+              <div class="contact__form__submit">
                 <button type="submit">お問い合わせ送信</button>
               </div>
             </form>
@@ -400,17 +433,24 @@
             <!-- PC：左、SP:上 -->
             <div class="footer__nav__left">
               <h2 class="footer__logo common__logo">
-                <img src="./images/logo_icon.png" alt="TripShare" />TripShare
+                <img
+                  src="./images/logo_icon.png"
+                  alt="TripShare"
+                  loading="lazy"
+                />TripShare
               </h2>
               <ul class="footer__sns">
                 <li>
                   <a href="https://www.instagram.com/" target="_blank"
-                    ><img src="./images/instagram.png" alt="instagram"
+                    ><img
+                      src="./images/instagram.png"
+                      alt="instagram"
+                      loading="lazy"
                   /></a>
                 </li>
                 <li>
                   <a href="https://x.com/" target="_blank"
-                    ><img src="./images/twitter.png" alt="X"
+                    ><img src="./images/twitter.png" alt="X" loading="lazy"
                   /></a>
                 </li>
               </ul>
