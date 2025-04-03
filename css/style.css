@@ -30,6 +30,16 @@ img {
   height: auto;
 }
 
+main img {
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  transform: translateY(15px);
+  opacity: 0;
+}
+main img.is_visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 a {
   transition: 0.4s color;
 }
@@ -121,7 +131,7 @@ SPレイアウト_START
 }
 .l-header.is_scrolled {
   backdrop-filter: blur(1px);
-  background-color: rgba(var(--lp-color-white), 0.6);
+  background-color: rgba(var(--lp-color-white), 0.9);
 }
 
 @keyframes headerSlideIn {
@@ -188,18 +198,33 @@ body.is_active .header__list {
   opacity: 1;
 }
 
-.header__list > li {
+.header__list a {
   text-shadow: 0 0 4px rgb(var(--lp-color-white));
 }
 
 .header__list .common__button {
-  box-shadow: 0 0 10px rgba(var(--lp-color-black), 0.1);
   color: rgb(var(--lp-color-black));
   font-size: clamp(14px, 2.4vw, 16px);
   padding: 1.5em;
 }
 .header__list .common__button:hover {
   color: rgb(var(--lp-color-pink));
+}
+
+.is_scrolled .header__list .common__button {
+  background: linear-gradient(
+    45deg,
+    rgb(var(--lp-color-orange)) -4.51%,
+    rgb(var(--lp-color-pink)) 46.93%,
+    rgb(var(--lp-color-purple)) 98.38%
+  );
+  color: rgb(var(--lp-color-white));
+}
+.is_scrolled .header__list .common__button:hover {
+  color: rgb(var(--lp-color-white));
+}
+.is_scrolled .header__list a.common__button {
+  text-shadow: initial;
 }
 
 .header__hamburger {
@@ -354,7 +379,11 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 }
 
 .service__list img {
+  content-visibility: auto;
+  contain: layout paint;
   object-fit: cover;
+  transform: translateZ(0);
+  will-change: transform;
   min-width: 100%;
   min-height: 100%;
 }
@@ -445,7 +474,7 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
   align-items: stretch;
   flex-direction: row;
   column-gap: 32px;
-  overflow-x: auto;
+  overflow-x: scroll;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 0 1.5em 16px 1.5em;
@@ -636,6 +665,15 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
   min-height: 150px;
 }
 
+.contact__form .errorMessage {
+  color: rgb(var(--lp-color-orange));
+  font-size: 0.75em;
+  font-weight: 700;
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+}
+
 .contact__form__list {
   margin: 0 auto;
   margin-bottom: 3em;
@@ -643,8 +681,12 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
   max-width: 493px;
 }
 
+.contact__form__list > li {
+  position: relative;
+}
+
 .contact__form__list > li:not(:last-of-type) {
-  margin-bottom: 1.5em;
+  margin-bottom: 2.5em;
 }
 
 .contact__form__h3 {
@@ -671,25 +713,47 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
   line-height: 1;
 }
 
-.common__button.contact__form__submit {
+.contact__form__submit {
   margin: 0 auto;
   padding: 0;
   width: 100%;
   max-width: 493px;
 }
 
-.contact__form__submit button {
+.contact__form__submit > button[type="submit"] {
   background-color: rgb(var(--lp-color-black));
   border-radius: 1000px;
   color: rgb(var(--lp-color-white));
-  cursor: pointer;
+  font-size: clamp(16px, 2.4vw, 20px);
+  font-weight: 700;
+  text-align: center;
   display: block;
-  transition: 0.4s color;
+  overflow: hidden;
+  transition: 0.4s background-color;
+  position: relative;
+  z-index: 1;
   padding: 16px 32px;
   width: 100%;
 }
-.contact__form__submit > button:hover {
-  color: rgb(var(--lp-color-pink));
+.contact__form__submit > button[type="submit"]::before {
+  background: linear-gradient(
+    45deg,
+    rgb(var(--lp-color-orange)) -4.51%,
+    rgb(var(--lp-color-pink)) 46.93%,
+    rgb(var(--lp-color-purple)) 98.38%
+  );
+  content: "";
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.contact__form__submit > button[type="submit"]:hover::before {
+  opacity: 1;
 }
 /* -------------------------------
   お問い合わせフォーム_END
@@ -949,7 +1013,6 @@ PC・タブレットレイアウト_START
     justify-content: flex-start;
     column-gap: 2em;
   }
-
   /* -------------------------------
     お問い合わせフォーム_END
   ------------------------------- */
