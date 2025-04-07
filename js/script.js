@@ -23,7 +23,6 @@ $doc.addEventListener("DOMContentLoaded", () => {
     },
     { threshold: 0.1 }
   );
-
   $images.forEach((image) => imagesObserver.observe(image));
 
   // ------------------------------
@@ -165,5 +164,24 @@ $doc.addEventListener("DOMContentLoaded", () => {
     }
 
     alert("必須項目が選択・入力されていません。");
+  });
+
+  // ------------------------------
+  // target="_blank"の脆弱性対策
+  // ------------------------------
+
+  // ページ全体のaタグを取得
+  const $elements = $doc.querySelectorAll("#Pages a");
+
+  $elements.forEach((el) => {
+    // target属性を持っていない場合、以下処理は実行しない
+    if (!el.hasAttribute("target")) {
+      return;
+    }
+
+    // target属性が_blankの場合、rel属性「noopener」を付与する
+    if (el.getAttribute("target") == "_blank") {
+      el.setAttribute("rel", "noopener");
+    }
   });
 });
