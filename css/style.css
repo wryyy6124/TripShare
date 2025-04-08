@@ -297,7 +297,7 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
 }
 
 .hero {
-  background-image: url("../images/hero.png");
+  background-image: url("/images/hero.png");
   background-size: cover;
   background-position: bottom 30% center;
   height: 60vh;
@@ -537,7 +537,7 @@ body.is_active .header__hamburger > span:nth-of-type(3) {
   コールトゥアクション_START
 ------------------------------- */
 .share {
-  background-image: url("../images/call_action_bg.jpg");
+  background-image: url("/images/call_action_bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
