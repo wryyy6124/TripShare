@@ -1,2 +1,5 @@
 # images配下の画像ファイルを全てGit管理対象外にする
 images/
+
+# vscodeの設定ファイルを対象外に
+.vscode
